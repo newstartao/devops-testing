@@ -16,7 +16,7 @@ jobs:
           sudo mkdir /my_account
           sudo chmod -R 777 /my_account
           cd /my_account
-          git clone https://${{env.token}}@github.com/newstartao/devops-testing
+          git clone https://${{secret.token}}@github.com/newstartao/devops-testing
         
       - name: Get /pwd
         run: |
