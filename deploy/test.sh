@@ -1,3 +1,3 @@
 #!/bin/bash
-echo"$tool"
-echo"$test"
+echo "$tool"
+echo "$test"
