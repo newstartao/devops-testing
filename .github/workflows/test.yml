@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: 
+      name: devops
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -14,6 +16,8 @@ jobs:
         run: |
           bash deploy/test.sh && cat deploy/test.sh
           cat deploy/values.yaml
-          echo"${{ env.super_secret }}"
+          echo"${{ env.tool }}"
+          echo"${{ env.test }}"
         env:
-          super_secret: ${{ secrets.SERVER }}
+          tool: ${{ secrets.SERVER }}
+          test: ${{ vars.TEST }}

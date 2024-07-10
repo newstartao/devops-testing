@@ -1,1 +1,2 @@
-NEW_TOOL: $super_secret
+NEW_TOOL: $tool
+TEST: $test
