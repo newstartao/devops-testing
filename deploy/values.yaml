@@ -1,2 +1,1 @@
-NEW_VARIABLE = ${{ secret.NEW_VARIABLE }}
-NAME = ${{ SECRET.NAME}}
+NEW_TOOL = $super_secret

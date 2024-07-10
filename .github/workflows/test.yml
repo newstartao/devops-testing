@@ -2,10 +2,6 @@ name: CI
 
 on:
   workflow_dispatch:
-    inputs:
-      github_token:
-        description: 'GitHub Token'
-        required: true
 
 env:
   super_secret: ${{ secrets.SERVER }}
@@ -15,22 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        run: |
-          sudo mkdir /my_account
-          sudo chmod -R 777 /my_account
-          cd /my_account
-          git clone https://${{inputs.github_token}}@github.com/newstartao/devops-testing.git
-
-
-      - name: Get /pwd
-        run: |
-          cd /my_account
-          pwd
-          echo "testing"
-        
+        uses: actions/checkout@v3
 
       - name: Run my build script
         run: |
-          cd /my_account/devops-testing/deploy/
-          chmod 777 ./test.sh
-          ./test.sh 
+          bash test.yml && cat test.yml
+          cat values.yaml
