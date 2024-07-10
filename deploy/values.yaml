@@ -1,0 +1,2 @@
+NEW_VARIABLE = ${{ secret.NEW_VARIABLE }}
+NAME = ${{ SECRET.NAME}}
