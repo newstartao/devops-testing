@@ -15,9 +15,9 @@ jobs:
           sudo mkdir /my_account
           sudo chmod -R 777 /my_account
           cd /my_account
-          git clone https://github.com/newstartao/devops-testing
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          git clone https://jitips-devops:${{ secrets.TOKEN }}@github.com/newstartao/devops-testing.git
+
+
       - name: Get /pwd
         run: |
           cd /my_account
