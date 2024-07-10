@@ -1,10 +1,14 @@
 name: CI
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      github_token:
+        description: 'GitHub Token'
+        required: true
 
 env:
-  super_secret: ${{ secrets.ABCDE }}
+  super_secret: ${{ secrets.SERVER }}
 
 jobs:
   build:
@@ -15,7 +19,7 @@ jobs:
           sudo mkdir /my_account
           sudo chmod -R 777 /my_account
           cd /my_account
-          git clone https://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@github.com/newstartao/devops-testing.git
+          git clone https://${{inputs.github_token}}@github.com/newstartao/devops-testing.git
 
 
       - name: Get /pwd
@@ -28,4 +32,5 @@ jobs:
       - name: Run my build script
         run: |
           cd /my_account/devops-testing/deploy/
-          bash ./test.sh 
+          chmod 777 ./test.sh
+          ./test.sh 
