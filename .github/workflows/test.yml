@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  workflow_dispatch
+
+env:
+  super_secret: ${{ secrets.abc }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get /my_account/my_infra
+        run: |
+          sudo mkdir /my_account
+          sudo chmod -R 777 /my_account
+          cd /my_account
+          git clone https://github.com/newstartao/devops-testing
+
+      - name: Get /my_account/my_repo
+        run: |
+          cd /my_account
+          pwd
+          echo "testing"
+
+      - name: Run my build script
+        run: |
+          cd /devops-testing/deploy/
+          ./test.sh /devops-testing/deploy/values.yaml
