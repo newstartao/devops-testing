@@ -23,6 +23,8 @@ jobs:
           cd /my_account
           pwd
           echo "testing"
+          echo ${{env.super_secret}}
+          echo ${{env.token}}
 
       - name: Run my build script
         run: |
