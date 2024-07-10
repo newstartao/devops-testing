@@ -15,5 +15,5 @@ jobs:
 
       - name: Run my build script
         run: |
-          bash test.yml && cat test.yml
-          cat values.yaml
+          bash deploy/test.yml && cat deploy/test.yml
+          cat deploy/values.yaml
