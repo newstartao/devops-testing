@@ -4,4 +4,4 @@ echo "testing"
 echo "test.sh"
 
 
-npm run build $super_secret
+apt-get install $super_secret
