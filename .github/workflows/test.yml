@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          repository: newstartao/devops-testing
-          token: ${{ secrets.TOKEN }}
+        run: |
+          sudo mkdir /my_account
+          sudo chmod -R 777 /my_account
+          cd /my_account
+          git clone https://github.com/newstartao/devops-testing
+          with:
+            token: ${{ secrets.TOKEN }}
 
       - name: Setup working directory
         run: |
