@@ -4,4 +4,4 @@ echo "testing"
 echo "test.sh"
 
 
-apt-get install $super_secret
+sudo apt-get install $super_secret
