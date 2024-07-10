@@ -4,18 +4,20 @@ on:
   workflow_dispatch
 
 env:
-  super_secret: ${{ secrets.ABCDE }}
+  super_secret: ${{ secrets.devops.ABCDE }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # - name: Checkout
+      #   uses: actions/checkout@v2
       - name: Get /newstartao/devops-testing
         run: |
           sudo mkdir /my_account
           sudo chmod -R 777 /my_account
           cd /my_account
-          git clone https://github.com/newstartao/devops-testing
+          git clone git@github.com:newstartao/devops-testing.git
 
       - name: Get /pwd
         run: |
