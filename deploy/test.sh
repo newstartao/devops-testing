@@ -1,4 +1,5 @@
 #!/bin/bash
 
-tool= $super_secret
+tool=$super_secret
 echo"$tool"
+echo"$super_secret"

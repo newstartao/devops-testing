@@ -1,1 +1,1 @@
-NEW_TOOL = $super_secret
+NEW_TOOL: $super_secret

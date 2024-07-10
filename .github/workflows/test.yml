@@ -14,5 +14,6 @@ jobs:
         run: |
           bash deploy/test.sh && cat deploy/test.sh
           cat deploy/values.yaml
+          echo"${{ env.super_secret }}"
         env:
           super_secret: ${{ secrets.SERVER }}
