@@ -17,14 +17,7 @@ jobs:
           sudo chmod -R 777 /my_account
           cd /my_account
           git clone https://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@github.com/newstartao/devops-testing
-          
-
-      - name: Setup working directory
-        run: |
-          sudo mkdir /my_account
-          sudo chmod -R 777 /my_account
-          cd /my_account
-
+        
       - name: Get /pwd
         run: |
           cd /my_account
