@@ -3,9 +3,6 @@ name: CI
 on:
   workflow_dispatch:
 
-env:
-  super_secret: ${{ secrets.SERVER }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,3 +14,5 @@ jobs:
         run: |
           bash deploy/test.sh && cat deploy/test.sh
           cat deploy/values.yaml
+        env:
+          super_secret: ${{ secrets.SERVER }}
