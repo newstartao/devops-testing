@@ -5,6 +5,7 @@ on:
 
 env:
   super_secret: ${{ secrets.ABCDE }}
+  token: ${{ secrets.TOKEN }}
 
 jobs:
   build:
@@ -15,9 +16,8 @@ jobs:
           sudo mkdir /my_account
           sudo chmod -R 777 /my_account
           cd /my_account
-          git clone https://github.com/newstartao/devops-testing
-          with:
-            token: ${{ secrets.TOKEN }}
+          git clone https://${token}@github.com/newstartao/devops-testing
+          
 
       - name: Setup working directory
         run: |
