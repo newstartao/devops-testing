@@ -1,9 +1,6 @@
 name: Run Shell Script
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -19,7 +16,8 @@ jobs:
           NAMES: ${{ secrets.NAMES }}
         run: echo "NAMES=$NAMES"
 
-      - name: Run shell script
+      - name: Change directory to deploy and run shell script
         run: |
-          chmod +x deploy/generate_names.sh
+          cd deploy
+          chmod +x generate_names.sh
           ./generate_names.sh
