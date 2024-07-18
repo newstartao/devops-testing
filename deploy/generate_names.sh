@@ -10,7 +10,7 @@ output="["
 for name in "${names_array[@]}"; do
  # trimmed_name=$(echo "$name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
  # output+="$trimmed_name, "
-  output+="\"$name\", "
+  output+="\"$name\" "
 done
 
 # Remove the trailing comma and space, and add the closing bracket
