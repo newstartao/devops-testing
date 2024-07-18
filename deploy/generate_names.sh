@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "$NAMES" ]; then
+  echo "NAMES environment variable is not set."
+  exit 1
+fi
+
 # Split the NAMES environment variable into an array
 IFS=' ' read -r -a names_array <<< "$NAMES"
 
