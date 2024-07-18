@@ -7,17 +7,19 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
+    env:
+      NAMES: "Shubham Mahipal Preetam"  # Define your environment variable here
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up environment variables
-        env:
-          NAMES: ${{ vars.NAMES }}
+      - name: Print environment variable
         run: echo "NAMES=$NAMES"
 
       - name: Change directory to deploy and run shell script
         run: |
           cd deploy
           chmod +x generate_names.sh
-          ./generate_names.sh 
+          output=$(./generate_names.sh)
+          echo "Script output: $output"
