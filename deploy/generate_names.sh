@@ -8,7 +8,7 @@ output="["
 
 # Loop through all the names in the array
 for name in "${names_array[@]}"; do
-  output+="\"$name\", "
+  output+="\"$name\" "
 done
 
 # Remove the trailing comma and space, and add the closing bracket
