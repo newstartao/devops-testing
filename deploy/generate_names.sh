@@ -9,7 +9,7 @@ output="["
 # Loop through all the names in the array
 for name in "${names_array[@]}"; do
   trimmed_name=$(echo "$name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
-  output+="$trimmed_name, "
+  output+="\"$trimmed_name\", "
  # output+="\"$name\", "
 done
 
