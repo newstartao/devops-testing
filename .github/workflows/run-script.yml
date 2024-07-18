@@ -1,0 +1,25 @@
+name: Run Shell Script
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up environment variables
+        env:
+          NAMES: ${{ secrets.NAMES }}
+        run: echo "NAMES=$NAMES"
+
+      - name: Run shell script
+        run: |
+          chmod +x deploy/generate_names.sh
+          ./generate_names.sh
