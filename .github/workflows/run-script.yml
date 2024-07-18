@@ -7,8 +7,7 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
-    env:
-      NAMES: "Shubham Mahipal Preetam"  # Define your environment variable here
+    environment: devops  # Specify the environment
 
     steps:
       - name: Checkout repository
