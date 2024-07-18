@@ -13,7 +13,7 @@ jobs:
 
       - name: Set up environment variables
         env:
-          NAMES: ${{ secrets.NAMES }}
+          NAMES: ${{ vars.NAMES }}
         run: echo "NAMES=$NAMES"
 
       - name: Change directory to deploy and run shell script
